@@ -1,0 +1,6 @@
+*
+
+!.gitignore
+!server.c
+!client.c
+!Makefile
