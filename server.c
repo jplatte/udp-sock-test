@@ -1,5 +1,3 @@
-#define _DEFAULT_SOURCE
-
 #include <errno.h>
 #include <stdio.h>
 #include <string.h>
@@ -46,7 +44,8 @@ int main()
         }
 
         buf[bytesRecvd] = '\0';
-        printf("Received \"%s\" from %s\n", buf, inet_ntoa(addr.sin_addr));
+        printf("Received \"%s\" from %s:%u\n",
+               buf, inet_ntoa(addr.sin_addr), ntohs(addr.sin_port));
     }
 
     close(fd);
